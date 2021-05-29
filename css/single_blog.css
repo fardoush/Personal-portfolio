@@ -1,0 +1,824 @@
+/*
+|------------------------------------------------------------------
+    [Table of contents]:
+
+1. FONTS: Google Font
+2. BODY
+3. COMMON CSS
+4. Button /.btn
+5. Social Icon/.social-icon
+6. COLOR SCHEME CSS/ .style-switche
+7. Header/.header
+8. Banner/.banner-section
+9. Blog Post/ .blog-post-wrapper
+10. Contact/ .contact-section
+11. Footer/ .footer-section
+12. Responsive
+
+
+    
+|-------------------------------------------------------------------
+*/
+
+
+/*
+|----------------------------------------------------------------------------
+	1. FONTS: Google Font
+|----------------------------------------------------------------------------
+*/
+
+
+/*
+|----------------------------------------------------------------------------
+	2. BODY
+|----------------------------------------------------------------------------
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+body {
+    color: #565656;
+    font-family: 'Raleway', sans-serif;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.48;
+    height: 100%;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	3. COMMON CSS
+|----------------------------------------------------------------------------
+*/
+
+a,
+a:hover {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #222;
+    font-family: 'Raleway', sans-serif;
+    line-height: 1.3;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+h5,
+h6 {
+    font-weight: 600;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+#particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    line-height: 2;
+    color: #000;
+    font-weight: 400;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title h5 {
+    margin-bottom: 15px;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    margin-bottom: 15px;
+}
+
+.section-title .section-subtitle {
+    border-left: 3px solid #FF6584;
+    padding-left: 10px;
+    text-transform: uppercase;
+    color: #3B3B98;
+    margin-bottom: 15px;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	4. Button/.btn
+|----------------------------------------------------------------------------
+*/
+
+.button-holder {
+    display: inline-block;
+}
+
+.btn {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    color: #0A043C;
+    font-weight: bold;
+    background: none;
+    border: 3px solid #0A043C;
+    transition: all 0.4s linear;
+    z-index: 999;
+}
+
+.btn:hover {
+    color: #fff;
+}
+
+.btn:before,
+.btn:after {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 100%;
+    z-index: -1;
+    background: #0A043C;
+    border: none;
+    transition: all 0.4s linear;
+}
+
+.mgs-btn:before {
+    top: 0;
+    left: 50%;
+}
+
+.mgs-btn:after {
+    top: 0;
+    right: 50%;
+}
+
+.mgs-btn:hover:before,
+.mgs-btn:hover:after {
+    width: 50%;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	5. Social Icon/.social-icon
+|----------------------------------------------------------------------------
+*/
+
+.social-icon a {
+    width: 38px;
+    height: 38px;
+    background-color: #FF6584;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 38px;
+    font-size: 20px;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: 0.3s ease;
+    padding: 5px 0;
+}
+
+.social-icon a i {
+    width: 38px;
+    height: 38px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    line-height: 38px;
+    position: relative;
+    color: #fff;
+    transition: .5s;
+    z-index: 3;
+}
+
+.social-icon a:hover i:hover {
+    color: #fff;
+    transform: rotateY(360deg);
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	6. COLOR SCHEME CSS/ .style-switche
+|----------------------------------------------------------------------------
+*/
+
+.style-switcher {
+    position: fixed;
+    right: 0;
+    top: 40%;
+    padding: 15px;
+    width: 200px;
+    z-index: 101;
+    border-radius: 5px;
+    background: #000000;
+    transition: all 0.3s ease;
+    transform: translateX(100%);
+}
+
+.style-switcher.open {
+    transform: translateX(-15px);
+}
+
+.style-switcher .s-icon {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 900;
+    right: 100%;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: all 0.3 ease;
+    border-radius: 50%;
+}
+
+.style-switcher .s-icon i {
+    line-height: 40px;
+}
+
+.toggle .theme-icon {
+    font-size: 25px;
+    margin: 20px;
+}
+
+.style-switcher .s-icon::after {
+    border-radius: 50%;
+}
+
+.style-switcher .style-toggler {
+    top: 0;
+    background: #FF6584;
+}
+
+.style-switcher .day-night {
+    top: 55px;
+    background: #FF6584;
+}
+
+.style-switcher h4 {
+    margin: 0 0 10px;
+    color: #eee;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.style-switcher .colors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.style-switcher .colors ul li {
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.style-switcher .colors ul li:nth-child(1),
+.style-switcher .colors li:nth-child(1) {
+    background: #4169E1;
+    color: #4169E1;
+}
+
+.style-switcher .colors ul li:nth-child(2),
+.style-switcher .colors ul li:nth-child(2) {
+    background: #66B95C;
+    color: #66B95C;
+}
+
+.style-switcher .colors ul li:nth-child(3),
+.style-switcher .colors ul li:nth-child(3) {
+    background: #FF9800;
+    color: #FF9800;
+}
+
+.style-switcher .colors ul li:nth-child(4),
+.style-switcher .colors ul li:nth-child(4) {
+    background: #FF5E94!important;
+    color: #FF5E94;
+}
+
+.style-switcher .colors ul li:nth-child(5),
+.style-switcher .colors ul li:nth-child(5) {
+    background: #FA5B0F!important;
+    color: #FA5B0F!important;
+}
+
+.style-switcher .colors ul li:nth-child(6),
+.style-switcher .colors ul li:nth-child(6) {
+    background: #242424;
+    color: #242424;
+}
+
+.style-switcher .colors ul li:nth-child(7),
+.style-switcher .colors ul li:nth-child(7) {
+    background: #9200EE;
+    color: #9200EE;
+}
+
+.style-switcher .colors ul li:nth-child(8),
+.style-switcher .colors ul li:nth-child(8) {
+    background: #00D4BD;
+    color: #00D4BD;
+}
+
+.style-switcher .colors ul li:nth-child(9),
+.style-switcher .colors ul li:nth-child(9) {
+    background: #5E9E9F;
+    color: #5E9E9F;
+}
+
+.style-switcher .colors ul li:nth-child(10),
+.style-switcher .colors ul li:nth-child(10) {
+    background: #E54B4B!important;
+    color: #E54B4B!important;
+}
+
+.style-switcher .colors ul li:nth-child(11),
+.style-switcher .colors ul li:nth-child(11) {
+    background: #666D41;
+    color: #666D41;
+}
+
+.style-switcher .colors ul li:nth-child(12),
+.style-switcher .colors ul li:nth-child(12) {
+    background: #FD2020;
+    color: #FD2020;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	7. Header/.header
+|----------------------------------------------------------------------------
+*/
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100vh;
+    transition: all ease-in-out 0.5s;
+    z-index: 9999;
+    background: #0a043c;
+    transition: all 0.5s;
+    padding: 0 15px;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.header .profile-img img {
+    margin: 15px auto;
+    display: block;
+    width: 120px;
+    border: 5px solid #1c2a7c;
+}
+
+.header .profile-img h4 a {
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+
+/* nav  */
+
+.nav-menu {
+    padding-top: 30px;
+}
+
+.nav-menu * {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-menu ul li {
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-menu ul li a {
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 600;
+    align-items: center;
+    color: #fff;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+    line-height: 2;
+    letter-spacing: 2px;
+}
+
+.nav-menu ul li a:hover {
+    display: flex;
+    align-items: center;
+    background: #FF6584;
+    border-radius: 5px;
+    padding: 8px 10px;
+    margin-bottom: 8px;
+    transition: 0.3s;
+    font-size: 15px;
+}
+
+.nav-menu ul li a i {
+    font-size: 24px;
+    padding-right: 8px;
+    color: #fff;
+}
+
+.menu-icon:before {
+    content: "\2630";
+    font-weight: bold;
+}
+
+.icofont-close::before {
+    content: "\2716";
+    font-weight: bold;
+}
+
+.mobile-nav-toggle {
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 9999;
+    border: 0;
+    background: none;
+    font-size: 24px;
+    transition: all 0.4s;
+    outline: none;
+    line-height: 1;
+    cursor: pointer;
+    text-align: right;
+}
+
+.mobile-nav-active {
+    overflow: hidden;
+}
+
+.mobile-nav-active .header {
+    left: 0;
+}
+
+.mobile-nav-toggle span {
+    color: #FF6584;
+    border: none;
+}
+
+#main {
+    margin-left: 300px;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	8. Banner/.banner-section
+|----------------------------------------------------------------------------
+*/
+
+.banner-section {
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(#0009, #0009), url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.banner-content h1 {
+    color: #fff;
+    font-size: calc(2rem + 3.55vw);
+    font-weight: 800;
+    letter-spacing: .3rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.banner-content h6 {
+    color: #fff!important;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.banner-link {
+    color: #fff!important;
+    font-size: 20px;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	9. Blog Post/ .blog-post-wrapper
+|----------------------------------------------------------------------------
+*/
+
+.blog-view-inner {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.blog-view-inner .blog-view h6,
+.blog-view-inner .blog-comment h6,
+.blog-view-inner .blog-share h6 {
+    font-size: 16px;
+}
+
+.blog-view-inner .blog-comment,
+.blog-view-inner .blog-share {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+}
+
+.blog-content h4 {
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.blog-post-wrapper h4 {
+    margin-bottom: 15px;
+}
+
+.recently-blog-inner {
+    display: flex;
+    flex-wrap: row;
+    margin: 15px 0;
+}
+
+.blog-img {
+    width: 80px;
+    height: 80px;
+}
+
+.recently-post {
+    margin-left: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.recently-post h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.blog-view-inners {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.blog-post-wrapper .blog-view-inners .blog-comment,
+.blog-view-inners .blog-share {
+    display: flex;
+    flex-direction: row;
+    margin-left: 15px;
+}
+
+.blog-view-inners h6 {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.blog-view-inners h6 i {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.blog-content-list ul li i {
+    color: rgba(10, 8, 8, 0.83);
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.blog-content-list ul li {
+    color: #000;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.blog-contents p {
+    margin-bottom: 20px;
+}
+
+
+/* ************ comment ************ */
+
+.blog-comment-title h4 {
+    margin: 20px 0;
+}
+
+.blog-comment {
+    display: flex;
+}
+
+.blog-client-img img {
+    width: 100px;
+    height: 100px;
+    line-height: 60px;
+    border-radius: 50%;
+}
+
+.blog-client-info {
+    max-width: 500px;
+    margin-left: 20px;
+}
+
+.blog-client-info h5 {
+    margin-bottom: 5px;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	10. Contact/ .contact-section
+|----------------------------------------------------------------------------
+*/
+
+.contact-section {
+    background: #f9f9f9;
+}
+
+.form input,
+.form textarea {
+    background: transparent;
+    border: 1px solid #E0E0E0;
+    width: 100%;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.form input:focus,
+.form textarea:focus {
+    border-color: #ddd;
+}
+
+.form textarea {
+    height: 160px;
+    max-height: 160px;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+
+.form .form-group {
+    position: relative;
+    margin-top: 20px
+}
+
+.form .help-block li {
+    color: #666D41;
+    font-size: 11px;
+    font-weight: 500;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	11. Footer/ .footer-section
+|----------------------------------------------------------------------------
+*/
+
+footer {
+    background: #0A043C;
+}
+
+.footer-icon a i {
+    background: #343434;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 10px 10px;
+    margin: 0 5px;
+}
+
+footer .copy-right {
+    color: #fff!important;
+}
+
+
+/* scroll btn */
+
+#myBtn {
+    /* display: none; */
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    z-index: 99;
+    border: none;
+    color: #fff;
+    background: #FF6584;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, .1);
+}
+
+#myBtn:hover {
+    background: #3B3B98;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, .1);
+}
+
+#myBtn:hover {
+    background: #3B3B98;
+    box-shadow: 0 5px 45px rgba(0, 0, 0, .1);
+}
+
+
+/*
+|----------------------------------------------------------------------------
+	12. Responsive
+|----------------------------------------------------------------------------
+*/
+
+@media screen and (max-width: 767px) {
+    .blog-client-img img {
+        width: 130px;
+        height: 80px;
+        line-height: 60px;
+        border-radius: 50%;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .blog-client-img img {
+        width: 130px;
+        height: 80px;
+        line-height: 60px;
+        border-radius: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .blog-client-img img {
+        width: 130px;
+        height: 70px;
+        line-height: 60px;
+        border-radius: 50%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .blog-view-inner .blog-view h6,
+    .blog-view-inner .blog-comment h6,
+    .blog-view-inner .blog-share h6 {
+        font-size: 12px;
+    }
+    .blog-client-img img {
+        width: 130px;
+        height: 70px;
+        line-height: 60px;
+        border-radius: 50%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .blog-client-img img {
+        width: 130px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 50%;
+    }
+}
